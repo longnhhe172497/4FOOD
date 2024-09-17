@@ -1,7 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './SigninForm.css'; // Assuming custom styles are in this file
-
+import googleLogo from '../assets/images/inner-page/google.png'; // Make sure this path is correct
+import facebookLogo from '../assets/images/inner-page/facebook.png';
+import loginImage from '../assets/images/inner-page/log-in.png'; // Your login image
 
 const SigninForm = () => {
   return (
