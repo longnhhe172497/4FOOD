@@ -11,7 +11,7 @@ function App() {
   return (
     <Router>
     <Routes>
-      <Route path="/" element={<SigninForm />} />
+      <Route path="/signin" element={<SigninForm />} />
       <Route path="/signup" element={<SignUpForm />} />
       {/* Add other routes as necessary */}
     </Routes>
