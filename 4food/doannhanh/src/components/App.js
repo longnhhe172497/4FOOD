@@ -1,8 +1,8 @@
 import React from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Breadcrumb from './components/Breadcrumb';
-import SignUpForm from './components/SignUpForm';
+import Breadcrumb from './Breadcrumb';
+import SignUpForm from './SignUpForm';
 
 function App() {
   return (
