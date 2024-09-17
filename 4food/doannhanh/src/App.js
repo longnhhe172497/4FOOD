@@ -7,7 +7,7 @@ import SignUpForm from './components/SignUpForm';
 function App() {
   return (
     <div>
-      {/* Breadcrumb Section */}
+      {/* Breadcrumb Section */}s
       <Breadcrumb />
 
       {/* Sign Up Section */}
