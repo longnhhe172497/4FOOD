@@ -4,6 +4,7 @@ import './SigninForm.css'; // Assuming custom styles are in this file
 import googleLogo from '../assets/images/inner-page/google.png'; // Make sure this path is correct
 import facebookLogo from '../assets/images/inner-page/facebook.png';
 import loginImage from '../assets/images/inner-page/log-in.png'; // Your login image
+import '@fortawesome/fontawesome-free/css/all.min.css';
 
 const SigninForm = () => {
   return (
