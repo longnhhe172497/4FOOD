@@ -94,7 +94,8 @@ const SignUpForm = () => {
                       className="btn google-button w-100"
                     >
                       <img
-                        src="../assets/images/inner-page/google.png"
+                      
+                        src="4food/doannhanh/src/image/kisspng-google-icon-1713874997698.webp"
                         className="blur-up lazyload"
                         alt="Google"
                       />
