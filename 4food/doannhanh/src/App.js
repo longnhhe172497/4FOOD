@@ -4,18 +4,19 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 import SignUpForm from './components/SignUpForm';
 import SigninForm from './components/SigninForm';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 
 
 function App() {
   return (
     <Router>
-    <Routes>
-      <Route path="/signin" element={<SigninForm />} />
-      <Route path="/signup" element={<SignUpForm />} />
-      {/* Add other routes as necessary */}
-    </Routes>
-  </Router>
+      <Routes>
+        <Route path="/" element={<Navigate to="/SigninForm" />} />  {/* Redirect to sign-in by default */}
+        <Route path="/SigninForm" element={<SigninForm />} />
+        <Route path="/SignUpForm" element={<SignUpForm />} />
+        {/* Add other routes as necessary */}
+      </Routes>
+    </Router>
   );
 }
 
