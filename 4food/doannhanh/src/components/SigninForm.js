@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-//import './SigninForm.css'; // Assuming custom styles are in this file
 import '@fortawesome/fontawesome-free/css/all.min.css';
 
 const SigninForm = () => {
@@ -36,7 +35,7 @@ const SigninForm = () => {
           <div className="row">
             <div className="col-xxl-6 col-xl-5 col-lg-6 d-lg-block d-none ms-auto">
               <div className="image-contain">
-                <img src={'../assets/images/inner-page/sign-in.png'} className="img-fluid" alt="/SigninForm" />
+                <img src={loginImage} className="img-fluid" alt="Login" />
               </div>
             </div>
 
@@ -85,7 +84,7 @@ const SigninForm = () => {
                             Remember me
                           </label>
                         </div>
-                        <Link to="/forgot" className="forgot-password">
+                        <Link to="/ForgotPassword" className="forgot-password">
                           Forgot Password?
                         </Link>
                       </div>
@@ -99,7 +98,7 @@ const SigninForm = () => {
                   </form>
                 </div>
 
-                <div className="other-log-in">
+                <div className="other-log-in">  
                   <h6>or</h6>
                 </div>
 
@@ -107,12 +106,12 @@ const SigninForm = () => {
                   <ul>
                     <li>
                       <a href="https://www.google.com/" className="btn google-button w-100">
-                        <img src={'../assets/images/inner-page/google.png'} style={{ width: '20px' }} className="blur-up lazyload" alt="Google" /> Log In with Google
+                        <img src={googleLogo} className="blur-up lazyload" alt="Google" /> Log In with Google
                       </a>
                     </li>
                     <li>
                       <a href="https://www.facebook.com/" className="btn google-button w-100">
-                        <img src={'../assets/images/inner-page/facebook.png'} className="blur-up lazyload" alt="Facebook" /> Log In with Facebook
+                        <img src={facebookLogo} className="blur-up lazyload" alt="Facebook" /> Log In with Facebook
                       </a>
                     </li>
                   </ul>
@@ -120,7 +119,7 @@ const SigninForm = () => {
 
                 <div className="sign-up-box">
                   <h4>Don't have an account?</h4>
-                  <Link to="/SignUpForm">Sign Up</Link>
+                  <Link to="/signup">Sign Up</Link>
                 </div>
               </div>
             </div>
