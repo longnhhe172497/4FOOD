@@ -18,7 +18,7 @@ const SignUpForm = () => {
           <div className="col-xxl-4 col-xl-5 col-lg-6 col-sm-8 mx-auto">
             <div className="log-in-box">
               <div className="log-in-title">
-                <h3>Welcome To Fastkart</h3>
+                <h3>Welcome To 4FOOD</h3>
                 <h4>Create New Account</h4>
               </div>
 
