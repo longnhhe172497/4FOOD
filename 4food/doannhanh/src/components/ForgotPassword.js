@@ -34,7 +34,7 @@ const ForgotPassword = () => {
           <div className="row">
             <div className="col-xxl-6 col-xl-5 col-lg-6 d-lg-block d-none ms-auto">
               <div className="image-contain">
-                <img src={forgotImage} className="img-fluid" alt="Forgot Password" />
+                <img src={'../assets/images/inner-page/forgot.png'} className="img-fluid" alt="ForgotPassword" />
               </div>
             </div>
 
