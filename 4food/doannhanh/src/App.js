@@ -12,7 +12,7 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Navigate to="" />} />  {/* Redirect to sign-in by default */}
+        <Route path="/" element={<Navigate to="/SigninForm" />} />  {/* Redirect to sign-in by default */}
         <Route path="/SigninForm" element={<SigninForm />} />
         <Route path="/SignUpForm" element={<SignUpForm />} />
         <Route path="/ForgotPassword" element={<ForgotPassword />} />
