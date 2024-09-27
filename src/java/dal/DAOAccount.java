@@ -26,7 +26,7 @@ public class DAOAccount extends DBContext {
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
                 return new Account(
-                    rs.getInt(1),
+                        rs.getInt(1),
                         rs.getInt(2),
                         rs.getString(2),
                         rs.getString(3),
@@ -37,12 +37,13 @@ public class DAOAccount extends DBContext {
                         rs.getString(8),
                         rs.getInt(9),
                         rs.getInt(10));
-                
+
             }
         } catch (Exception e) {
         }
         return null;
     }
+
     public Account getAccountById(int AccountID) {
         String sql = "Select * from [Account] where AccountID = ?";
 
@@ -52,7 +53,7 @@ public class DAOAccount extends DBContext {
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
                 return new Account(
-                    rs.getInt(1),
+                        rs.getInt(1),
                         rs.getInt(2),
                         rs.getString(2),
                         rs.getString(3),
@@ -63,13 +64,13 @@ public class DAOAccount extends DBContext {
                         rs.getString(8),
                         rs.getInt(9),
                         rs.getInt(10));
-                
+
             }
         } catch (Exception e) {
         }
         return null;
     }
-    
+
     public void updatePassword(String email, String password) {
         String sql = "UPDATE [dbo].[Account]\n"
                 + "   SET [Password] = ?\n"
@@ -82,5 +83,34 @@ public class DAOAccount extends DBContext {
         } catch (SQLException e) {
             System.out.println(e);
         }
+    }
+
+    public Account getAccountByUsernameAndPassword(String username, String password) {
+        Account acc = null;
+        try {
+            // Assuming you have a JDBC connection set up, replace with your actual query
+            String query = "SELECT * FROM Account WHERE username = ? AND password = ?";
+            PreparedStatement ps = connection.prepareStatement(query);
+            ps.setString(1, username);
+            ps.setString(2, password);
+            ResultSet rs = ps.executeQuery();
+            if (rs.next()) {
+                acc = new Account(
+                        rs.getInt("accountId"),
+                        rs.getInt("roleId"),
+                        rs.getString("username"),
+                        rs.getString("password"),
+                        rs.getString("fullName"),
+                        rs.getString("email"),
+                        rs.getString("phone"),
+                        rs.getString("address"),
+                        rs.getInt("statusId"),
+                        rs.getInt("totalbyingPoints")
+                );
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return acc;
     }
 }
