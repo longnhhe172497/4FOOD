@@ -4,6 +4,10 @@
  */
 package Controller;
 
+import com.sun.jdi.connect.Transport;
+import jakarta.websocket.Session;
+import java.net.Authenticator;
+import java.net.PasswordAuthentication;
 import java.time.LocalDateTime;
 import java.util.Properties;
 import java.util.UUID;
