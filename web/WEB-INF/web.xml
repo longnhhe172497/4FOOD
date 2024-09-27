@@ -16,4 +16,12 @@
         <servlet-name>resetPassword</servlet-name>
         <url-pattern>/resetPassword</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>SignupStaffservlet</servlet-name>
+        <servlet-class>controller.SignupStaffservlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SignupStaffservlet</servlet-name>
+        <url-pattern>/SignupStaff</url-pattern>
+    </servlet-mapping>
 </web-app>
