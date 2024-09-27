@@ -37,27 +37,19 @@ public class LoginController extends HttpServlet {
         String username = request.getParameter("user");
         String password = request.getParameter("pass");
 
-        String gRecaptchaResponse = request.getParameter("g-recaptcha-response");
-
-        // Kiểm tra xem người dùng đã click vào captcha hay chưa
-        if (gRecaptchaResponse == null || gRecaptchaResponse.isEmpty()) {
-            request.setAttribute("mess", "Please complete the captcha!");
-            request.getRequestDispatcher("Login.jsp").forward(request, response);
-            return; // Đảm bảo không tiếp tục thực hiện code phía dưới nếu không có captcha
-        }
-
-        // Xử lý đăng nhập với username và password
+        // Call to DAO for username and password validation
         DAOAccount dao = new DAOAccount();
-        Account acc = dao.getAccountByUsernameAndPassword(username, password); // Modify this method in DAOAccount
+        Account acc = dao.getAccountByUsernameAndPassword(username, password);
 
+        // Handle invalid login
         if (acc == null) {
-            request.setAttribute("mess", "You entered the wrong account or password, please re-enter!");
+            request.setAttribute("mess", "Incorrect username or password!");
             request.getRequestDispatcher("Login.jsp").forward(request, response);
         } else {
+            // Login success: set session attributes
             HttpSession session = request.getSession();
-            session.setAttribute("acc", acc);
-            request.setAttribute("user", acc.getUsername());
-            request.getRequestDispatcher("home").forward(request, response);
+            session.setAttribute("acc", acc);  // Store the Account object in the session
+            request.getRequestDispatcher("home").forward(request, response);  // Redirect to home page
         }
     }
 

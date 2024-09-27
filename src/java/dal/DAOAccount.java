@@ -88,27 +88,29 @@ public class DAOAccount extends DBContext {
     public Account getAccountByUsernameAndPassword(String username, String password) {
         Account acc = null;
         try {
-            // Assuming you have a JDBC connection set up, replace with your actual query
-            String query = "SELECT * FROM Account WHERE username = ? AND password = ?";
-            PreparedStatement ps = connection.prepareStatement(query);
-            ps.setString(1, username);
-            ps.setString(2, password);
+            // SQL query to match username and password in the database
+            String sql = "SELECT * FROM Account WHERE Username = ? AND Password = ?";
+            PreparedStatement ps = connection.prepareStatement(sql);
+            ps.setString(1, username); // Set username parameter
+            ps.setString(2, password); // Set password parameter
             ResultSet rs = ps.executeQuery();
+
+            // If a record is found, populate the Account object
             if (rs.next()) {
                 acc = new Account(
-                        rs.getInt("accountId"),
-                        rs.getInt("roleId"),
-                        rs.getString("username"),
-                        rs.getString("password"),
-                        rs.getString("fullName"),
-                        rs.getString("email"),
-                        rs.getString("phone"),
-                        rs.getString("address"),
-                        rs.getInt("statusId"),
-                        rs.getInt("totalbyingPoints")
+                        rs.getInt("AccountID"),
+                        rs.getInt("RoleID"),
+                        rs.getString("Username"),
+                        rs.getString("Password"),
+                        rs.getString("FullName"),
+                        rs.getString("Email"),
+                        rs.getString("Phone"),
+                        rs.getString("Address"),
+                        rs.getInt("StatusID"),
+                        rs.getInt("TotalBuyingPoints")
                 );
             }
-        } catch (Exception e) {
+        } catch (SQLException e) {
             e.printStackTrace();
         }
         return acc;
