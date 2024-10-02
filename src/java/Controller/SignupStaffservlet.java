@@ -60,19 +60,16 @@ public class SignupStaffservlet extends HttpServlet {
     @Override
  protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         // Retrieve form data from the request
-        String staffName = request.getParameter("staffName");
-        String staffEmail = request.getParameter("staffEmail");
-        String staffID = request.getParameter("staffID");
-        String department = request.getParameter("department");
+        String Email = request.getParameter("staffEmail");
         String password = request.getParameter("password");
 
         // Create an instance of SignupStaff to store the data
-        SignupStaff newStaff = new SignupStaff(staffName, staffEmail, staffID, department, password);
+        SignupStaff newStaff = new SignupStaff(Email, password);
 
         // Validate the password (just a simple check here)
         if (newStaff.validatePassword()) {
             // Password is valid, proceed with registration
-            request.setAttribute("message", "Signup successful! Welcome, " + staffName + ".");
+            request.setAttribute("message", "Signup successful! Welcome, " + ".");
             request.setAttribute("staff", newStaff);
 
             // Forward the request to a success page (JSP or HTML)

@@ -56,21 +56,10 @@
     </div>
 
     <form action="SignupStaff" method="post">
-        <!-- Staff Name -->
-        <label for="staffName">Staff Name:</label>
-        <input type="text" id="staffName" name="staffName" required>
 
         <!-- Staff Email -->
         <label for="staffEmail">Email:</label>
         <input type="email" id="staffEmail" name="staffEmail" required>
-
-        <!-- Staff ID -->
-        <label for="staffID">Staff ID:</label>
-        <input type="text" id="staffID" name="staffID" required>
-
-        <!-- Department -->
-        <label for="department">Department:</label>
-        <input type="text" id="department" name="department" required>
 
         <!-- Password -->
         <label for="password">Password:</label>
